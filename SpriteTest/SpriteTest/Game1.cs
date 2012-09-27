@@ -18,7 +18,11 @@ namespace SpriteTest
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        AnimatedSprite Alucard;
+        AnimatedSprite crouching;
+        AnimatedSprite running;
+        AnimatedSprite wolverine;
+        Background background;
+
 
         public Game1()
         {
@@ -35,7 +39,9 @@ namespace SpriteTest
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.ApplyChanges();
             base.Initialize();
         }
 
@@ -47,11 +53,21 @@ namespace SpriteTest
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Alucard = new AnimatedSprite(Content.Load<Texture2D>(@"Textures\alucard_walking_interlaced"), 0, 0, 64, 64, 16);
-            Alucard.X = 0;
-            Alucard.Y = 0;
+            crouching = new AnimatedSprite(Content.Load<Texture2D>(@"Textures\alucard_colors"), 19,56,51,46,14);
+            crouching.X = 0;
+            crouching.Y = 0;
 
+            running = new AnimatedSprite(Content.Load<Texture2D>(@"Textures\alucard_colors"), 32,271,39,46,16);
+            running.X = 0;
+            running.Y = 0;
+
+            wolverine = new AnimatedSprite(Content.Load<Texture2D>(@"Textures\final_alucard"), 26,195,39,59,16);
+            wolverine.X = 0;
+            wolverine.Y = 0;
+            
             // TODO: use this.Content to load your game content here
+            //background = new Background(Content, @"Textures\background");
+            background = new Background(Content, @"Textures\fullbackground-1");
         }
 
         /// <summary>
@@ -75,8 +91,9 @@ namespace SpriteTest
                 this.Exit();
 
             // TODO: Add your update logic here
-
-            Alucard.Update(gameTime);
+            crouching.Update(gameTime);
+            running.Update(gameTime);
+            wolverine.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -88,9 +105,12 @@ namespace SpriteTest
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            // TODO: Add your drawing code here            
             spriteBatch.Begin();
-            Alucard.Draw(spriteBatch, 0, 0, false);
+            background.Draw(spriteBatch);
+            //crouching.Draw(spriteBatch, 0, 120, false);
+            running.Draw(spriteBatch, 551, 346, false);
+            //wolverine.Draw(spriteBatch, 50, 200, false);
             spriteBatch.End();
             base.Draw(gameTime);
         }
