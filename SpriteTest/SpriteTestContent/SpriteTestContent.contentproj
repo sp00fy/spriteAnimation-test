@@ -42,13 +42,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\fighter_standing still.png">
-      <Name>fighter_standing still</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Textures\alucard_walking_interlaced.png">
       <Name>alucard_walking_interlaced</Name>
       <Importer>TextureImporter</Importer>

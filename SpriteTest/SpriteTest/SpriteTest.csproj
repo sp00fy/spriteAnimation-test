@@ -107,11 +107,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrameAnimation.cs" />
+    <Compile Include="MobileSprite.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Background.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="SpriteAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -11,7 +11,7 @@ namespace SpriteTest
     {
         Texture2D t2dTexture;
 
-        float fFrameRate = 0.20f;
+        float fFrameRate = 0.04f;
         float fElapsed = 0.0f;
 
         int iFrameOffsetX = 0;
